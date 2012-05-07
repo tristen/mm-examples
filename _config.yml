@@ -1,0 +1,12 @@
+title: 'Microsite Sandbox'
+auto: true
+server: true
+markdown: rdiscount
+permalink: /:title.html
+server_port: 4001
+columnist:
+  paths:
+  - _posts
+baseurl: 
+rdiscount:
+  extensions: [smart]

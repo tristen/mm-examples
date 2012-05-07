@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;' />
+  <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <title>Microsite Sandbox</title>
+  <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <link href='/site.css' rel='stylesheet' type='text/css' media='all' />
+  <script src='site.js'></script>
+</head>
+<body>
+  <div id='header'>
+    <div class='limiter clearfix'>
+      <h1>
+        <a class='inner title' href='/'>Modest Maps
+          <span class='thin'>examples</span>
+        </a>
+      </h1>
+    </div>
+  </div>
+  <div class='browse'>
+  <div class='limiter clearfix'>
+    <form id='search'>
+      <input type='text' placeholder='Filter topics'>
+    </form>
+      <script type='text/template' id='tags'>
+        <li>
+          <a data-tag='<%= tag %>' href='#'><%= tag %></a>
+        </li>
+      </script>
+
+      <ul id='tag-list' class='clearfix'></ul>
+  </div>
+</div>
+<div class='limiter clearfix'>
+
+  <script type='text/template' id='examples'>
+    <li>
+      <a href='<%= url %>' class='post'>
+        <h4 class='<%= category %> title'><%= title %></h4>
+        <em class='description'><%= description %></em>
+        <small class='tags'><%= tags %></small>
+        </a>
+    </li>
+  </script>
+
+  <ul id='results' class='topics'></ul>
+</div>
+<script>
+  $(function() {
+    var front = new Docs();
+    $(front.queryExamples);
+  });
+</script>
+
+
+  <div id='footer'>
+    <div class='limiter'>
+      <small>The authorship of code examples are listed in the main <a href='https://github.com/stamen/modestmaps-js/tree/master/examples'>ModestMaps repository</a>.</small>
+    </div>
+  </div>
+</body>
+</html>

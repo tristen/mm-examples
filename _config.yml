@@ -7,6 +7,6 @@ server_port: 4001
 columnist:
   paths:
   - _posts
-baseurl: 
+baseurl: /mm-examples
 rdiscount:
   extensions: [smart]

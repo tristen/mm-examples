@@ -394,31 +394,40 @@ ul#toc {
  *   Pretty syntax highlighting
  *   SPAN elements with the classes below are added by prettyprint.
  *  ------------------------------------------------------- */
-.pln { color: #000 }  /* plain text */
+.com { color: #93a1a1; }
+.lit { color: #195f91; }
+.pun, .opn, .clo { color: #93a1a1; }
+.fun { color: #dc322f; }
+.str, .atv { color: #D14; }
+.kwd, .linenums .tag { color: #1e347b; }
+.typ, .atn, .dec, .var { color: teal; }
+.pln { color: #48484c; }
 
-.str { color: #080 }  /* string content */
-.kwd { color: #008 }  /* a keyword */
-.com { color: #998 }  /* a comment */
-.typ { color: #606 }  /* a type name */
-.lit { color: #066 }  /* a literal value */
-/* punctuation, lisp open bracket, lisp close bracket */
-.pun, .opn, .clo { color: #660 }
-.tag { color: #008 }  /* a markup tag name */
-.atn { color: #606 }  /* a markup attribute name */
-.atv { color: #080 }  /* a markup attribute value */
-.dec, .var { color: #606 }  /* a declaration; a variable name */
-.fun { color: red }  /* a function name */
+pre {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  padding: 8px;
+  margin: 20px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  }
+.prettyprint.linenums {
+  -moz-box-shadow:
+    inset 40px 0 0 #ececec,
+    inset 41px 0 0 #dedede;
+  box-shadow:
+    inset 40px 0 0 #ececec,
+    inset 41px 0 0 #dedede;
+  }
 
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
-  list-style-type: decimal;
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style-position: inside;
-  color: #AAA;
-  }
+  margin: 0 0 0 33px; /* IE indents via margin-left */
+  list-style: decimal;
+  } 
   ol.linenums li {
-    display: list-item;
+    padding-left: 12px;
+    color: #bebec5;
+    line-height: 18px;
     }
 
 /*  -------------------------------------------------------

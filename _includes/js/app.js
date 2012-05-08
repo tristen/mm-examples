@@ -125,12 +125,11 @@
       var tSnippets = _.template($('#snippets').html());
       var tToc = _.template($('#directory-listing').html());
 
-      $.ajax({
-        url: request,
-        dataType: 'json',
-        success: function(data) {
+
+      $.getJSON(request + '?callback=?', function(resp) {
+
           var f = {};
-          _.each(data.files, function(files) {
+          _.each(resp.data.files, function(files) {
 
             // Build a new object out of results
             f.name = files.filename;
@@ -147,7 +146,6 @@
 
           // Animate scrolling down the document when toc links are clicked.
           $('#toc').find('a').on('click', that.animateScrolling);
-        }
       });
     },
 

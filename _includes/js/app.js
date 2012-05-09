@@ -14,6 +14,13 @@
         url: 'search.json',
         dataType: 'json',
         success: function(r) {
+          data = _(r).chain()
+            .compact()
+            .map(function(r) {
+              r.words = (r.title.toLowerCase() + ' ' + (r.tags.toString()).toLowerCase()).match(/(\w+)/g);
+              return r;
+            })
+            .value();
           _.delay(function () {tagList(tags)}, 10);
           _.each(r, function(result){
             $('#results').append(tExamples(result));
@@ -46,41 +53,20 @@
             $('#tag-list').find('a').removeClass('active');
             $(this).addClass('active');
 
-            var matches = find(tag.toLowerCase().match(/(\w+)/g));
-            _(matches).each(function(p) {
+            var filtered = find(tag.toLowerCase().match(/(\w+)/g));
+            _(filtered).each(function(p) {
               $('#results').append(tExamples(p));
             });
           } else {
             $(this).removeClass('active');
-            $.ajax({
-              url: 'search.json',
-              dataType: 'json',
-              success: function(r) {
-                _.each(r, function(result){
-                  $('#results').append(tExamples(result));
-                });
-              }
-            });
+              _.each(data, function(result){
+                $('#results').append(tExamples(result));
+              });
           }
         }
       }
 
       var find = function(phrase) {
-        if (!data) return $.ajax({
-          url: 'search.json',
-          dataType: 'json',
-          success: function(r) {
-            data = _(r).chain()
-              .compact()
-              .map(function(r) {
-                r.words = (r.title.toLowerCase() + ' ' + (r.tags.toString()).toLowerCase()).match(/(\w+)/g);
-                return r;
-              })
-              .value();
-            find(phrase);
-          }
-        });
-
         var matches = _(data).filter(function(p) {
           return _(phrase).filter(function(a) {
             return _(p.words).any(function(b) {
@@ -99,6 +85,9 @@
 
         if (phrase.length >= 2) {
           var matches = find(phrase.toLowerCase().match(/(\w+)/g));
+
+          $('#tag-list').find('a').removeClass('active');
+
           _(matches).each(function(p) {
             $('#results').append(tExamples(p));
           });
@@ -124,7 +113,6 @@
       var request = 'https://api.github.com/gists/' + hash;
       var tSnippets = _.template($('#snippets').html());
       var tToc = _.template($('#directory-listing').html());
-
 
       $.getJSON(request + '?callback=?', function(resp) {
 

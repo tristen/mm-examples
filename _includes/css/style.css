@@ -145,7 +145,7 @@ input::-moz-focus-inner {
 input[type='search'] {
   background-image: url(images/sprite.png);
   background-repeat: no-repeat;
-  background-position: 325px -46px;
+  background-position: 325px -48px;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -161,13 +161,15 @@ textarea,
 select {
   display: inline-block;
   width: 310px;
-  height: 35px;
   padding: 4px 40px 4px 8px;
   margin-bottom: 9px;
   font-size: 13px;
   color: #666;
   background-color: white;
   border: 1px solid #b0b0b0;
+  }
+input {
+  height: 30px;
   }
 input,
 textarea {
@@ -215,6 +217,7 @@ textarea {
 
 #footer {
   margin-top: 20px;
+  height: 80px;
   }
 
 /* --------------------------------------------------------
@@ -409,14 +412,6 @@ pre {
   margin: 20px 0;
   background-color: #fff;
   border: 1px solid #ddd;
-  }
-.prettyprint.linenums {
-  -moz-box-shadow:
-    inset 40px 0 0 #ececec,
-    inset 41px 0 0 #dedede;
-  box-shadow:
-    inset 40px 0 0 #ececec,
-    inset 41px 0 0 #dedede;
   }
 
 /* Specify class=linenums on a pre to get line numbering */

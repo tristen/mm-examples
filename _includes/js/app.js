@@ -5,7 +5,6 @@
   Docs.prototype = {
 
     queryExamples: function () {
-      var data = false;
       var search = $('#search');
       var tExamples = _.template($('#examples').html());
       var tags = [];

@@ -2,14 +2,15 @@
 layout: 'default'
 ---
 
-<div class='limiter clearfix relative'>
+<div class='limiter clearfix relative' data-spy='scroll'>
   <div class='content'>
     <div class='content-main'>
-      <div class='content-header dark clearfix'>
-        <div class='title'>
-          <h2>{{page.title}}</h2>
+      <div class='content-header clearfix'>
+        <a href='{{site.baseurl}}/{{page.url}}' class='result'>
+          <h4 class='{{page.category}} title'>{{page.title}}</h4>
           <em class='description'>{{page.description}}</em>
-        </div>
+          <small class='tags'>{{page.tags}}</small>
+        </a>
         <div class='details'>
           <div>
             <h6 class='label'>Tools Required</h6>
@@ -32,10 +33,9 @@ layout: 'default'
           <div class='heading'>
             <h5 id='<%=fileId %>' class='filename'><%= name %></h5>
           </div>
-          <pre class='prettyprint linenums'><%= content %></pre>
+          <pre class='prettyprint linenums'><%- content %></pre>
         </div>
       </script>
-
       <div id='code-examples'></div>
     </div>
   </div>

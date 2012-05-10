@@ -1,5 +1,4 @@
 (function(context) {
-
   var Docs = function() {};
 
   Docs.prototype = {
@@ -21,7 +20,7 @@
             })
             .value();
           _.delay(function () {tagList(tags)}, 10);
-          _.each(r, function(result){
+          _.each(data, function(result){
             $('#results').append(tExamples(result));
             tags.push(result.tags);
           });
@@ -30,12 +29,11 @@
 
       var tagList = function (tags) {
         var tTags = _.template($('#tags').html());
-        var t = _(tags).chain()
-          .flatten(tags)
-          .uniq(tags)
-          .compact(tags)
-          .value();
-        _.each(t, function(tag) {
+
+          var f = _.flatten(tags);
+          var u = _.uniq(f);
+
+        _.each(u, function(tag) {
           $('#tag-list').append(tTags({'tag': tag}));
         });
 
@@ -78,28 +76,19 @@
       };
 
       $('input', search).keyup(_(function() {
-
         $('#results').empty();
         var phrase = $('input', search).val();
 
         if (phrase.length >= 2) {
           var matches = find(phrase.toLowerCase().match(/(\w+)/g));
-
           $('#tag-list').find('a').removeClass('active');
-
           _(matches).each(function(p) {
             $('#results').append(tExamples(p));
           });
           if (matches.length) return;
         } else {
-          $.ajax({
-            url: 'search.json',
-            dataType: 'json',
-            success: function(r) {
-              _.each(r, function(result){
-                $('#results').append(tExamples(result));
-              });
-            }
+          _.each(data, function(result){
+            $('#results').append(tExamples(result));
           });
         }
 

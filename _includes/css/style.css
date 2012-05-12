@@ -305,6 +305,7 @@ small.tags {
     #tag-list li a {
       color: #fff;
       background: #b0b0b0;
+      background: rgba(0,0,0,0.25);
       -moz-border-radius: 8px;
       border-radius: 15px;
       display: block;
@@ -315,8 +316,10 @@ small.tags {
       -webkit-transition: background-color 0.1s linear;
       transition: background-color 0.1s linear;
       }
-      #tag-list li a.active,
       #tag-list li a:hover {
+        background: rgba(0,0,0,0.35);
+        }
+      #tag-list li a.active {
         background: #0B202F;
         }
 

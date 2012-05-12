@@ -111,7 +111,6 @@ ul {
   }
 
 strong  { font-weight: bold; }
-em      { font-style: italic; }
 small   { font-size: 11px; }
 
 /* Input and Forms */
@@ -423,6 +422,9 @@ small.tags {
   #markdown a {
     font-weight: bold;
     color: #FE5741;
+    }
+  #markdown em {
+    font-style: italic;
     }
  
 /*  -------------------------------------------------------

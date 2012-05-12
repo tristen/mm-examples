@@ -31,9 +31,11 @@ layout: 'default'
 
       <!--Gist preview-->
       <iframe class='preview' src='http://bl.ocks.org/d/{{page.hash}}/' frameborder='0'></iframe>
+      <div id='markdown'></div>
+      <div id='html'></div>
+      <div id='code-examples'></div>
 
 <script type='text/template' id='markdown-snippets'>
-#####<%= filename %>
 <%= content %>
 </script>
 
@@ -53,9 +55,6 @@ layout: 'default'
           <pre class='prettyprint linenums'><%- content %></pre>
         </div>
       </script>
-      <div id='markdown'></div>
-      <div id='html'></div>
-      <div id='code-examples'></div>
     </div>
   </div>
   <div class='sidebar'>
@@ -79,7 +78,7 @@ layout: 'default'
       </div>
       <div class='use'>
         To use this example we encourage you to fork the code from <a href='https://gist.github.com'>gist.github.com</a> and customize it for your own needs.
-        <a target='_blank' class='button orange' href='https://gist.github.com/gists/{{page.hash}}'>Fork this gist</a>
+        <a target='_blank' class='button color' href='https://gist.github.com/gists/{{page.hash}}'>Fork this example</a>
       </div>
       <a class='button' href='https://gist.github.com/gists/{{page.hash}}/download'>Download source code</a>
     </div>

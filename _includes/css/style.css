@@ -13,7 +13,7 @@ h1 {
   margin: 0;
   }
 h2 {
-  font-size: 18px;
+  font-size: 18px
   margin: 0 0 5px;
   font-weight: 600;
   }
@@ -21,7 +21,7 @@ h4 {
   line-height: 22px;
   }
 h5 {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 0 10px;
   }
 h6 {
@@ -339,10 +339,11 @@ small.tags {
   background: #0d1421;
   }
 .content-header {
-  background: #fff;
+  background: white;
   margin: 20px 0 10px;
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  border: 1px solid #B0B0B0;
   }
   .content-header div.details {
     padding-top: 20px;
@@ -381,20 +382,20 @@ small.tags {
     }
 
 /*Table of contents*/
-ul#toc {
+#toc {
   height: 80px;
   height: auto!important;
   min-height: 80px;
   border-left: 1px solid #b0b0b0;
   padding: 5px 0 10px;
   }
-  ul#toc li {
+  #toc li {
     margin-bottom: 3px;
     }
-    ul#toc li:first-child {
+    #toc li:first-child {
       border: none;
       }
-    ul#toc li a {
+    #toc li a {
       display: block;
       color: #0D1421;
       font-weight: 700;
@@ -407,8 +408,8 @@ ul#toc {
       width: 220px;
       text-shadow: 0 1px 0 rgba(255,255,255,0.25);
       }
-      ul#toc li.active,
-      ul#toc li a:hover {
+      #toc li.active,
+      #toc li a:hover {
         background: #fff;
         background: rgba(255,255,255,0.9);
         color: #337A9D;

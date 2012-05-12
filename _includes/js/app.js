@@ -99,29 +99,47 @@
     getGist: function(hash) {
       var that = this;
       var request = 'https://api.github.com/gists/' + hash;
+
+      // Code Snippets
+      var markdownSnippets = _.template($('#markdown-snippets').html());
+      var htmlSnippets = _.template($('#html-snippets').html());
       var tSnippets = _.template($('#snippets').html());
-      var tToc = _.template($('#directory-listing').html());
+
+      // Table of Contents
+      var markdownToc = _.template($('#markdown-listing').html());
+      var htmlToc = _.template($('#html-listing').html());
+      var restToc = _.template($('#rest-listing').html());
 
       $.getJSON(request + '?callback=?', function(resp) {
-
-          var f = {};
           _.each(resp.data.files, function(files) {
+            var s = files.filename.split('.');
+            var ext = s[1];
 
-            // Build a new object out of results
-            f.name = files.filename;
-            f.content = files.content;
-            f.fileId = files.filename.split('.')[0];
+            // Create an ID name for anchor linking in the navigation
+            files.id = s[0];
 
-            // Send data to our template
-            $('#code-examples').append(tSnippets(f));
-            $('#toc').append(tToc(f));
-
+            if (files.language === 'HTML') {
+              $('#html').append(htmlSnippets(files));
+              $('#html-toc').append(htmlToc(files));
+            } else if (files.language === 'Markdown') {
+              $('#markdown').append(markdownSnippets(files));
+              $('#markdown-toc').append(markdownToc(files));
+            } else {
+              $('#code-examples').append(tSnippets(files));
+              $('#rest-toc').append(restToc(files));
+            }
           });
           // Syntax Highlighting
           prettyPrint();
 
+          // Markdown to html using showdown
+          var toHtml = (new Showdown.converter()).makeHtml($('#markdown').text());
+          $('#markdown').html(toHtml);
+
           // Animate scrolling down the document when toc links are clicked.
           $('#toc').find('a').on('click', that.animateScrolling);
+          // Set scrollspy on menu links
+          $(window).on('load resize', function () { $('body > #toc').scrollSpy(); });
       });
     },
 
@@ -131,8 +149,13 @@
 
     animateScrolling: function(e) {
       e.preventDefault();
-      var a = $(e.target).attr('href');
-      $('body,html').animate({ scrollTop: $(a).offset().top }, 500);
+      if ($(this).hasClass('top')) {
+        // Scroll to just below the preview map
+        $('html, body').animate({scrollTop: 575}, 300);
+      } else {
+        var a = $(e.target).attr('href');
+        $('body,html').animate({ scrollTop: $(a).offset().top }, 500);
+      }
     },
 
     fixedSidebar: function() {

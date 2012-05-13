@@ -18,8 +18,8 @@ layout: 'default'
         <div class='details'>
           <div>
             <h6 class='label'>Tools Required</h6>
-            {% for item in page.tools %}
-              {{item}} 
+            {% for tool in page.tools %}
+              {{tool}}{% unless forloop.last %},{% endunless %}
             {% endfor %}
           </div>
           <div>

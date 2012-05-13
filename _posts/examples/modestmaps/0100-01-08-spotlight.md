@@ -9,6 +9,7 @@
     - 'Canvas'
   tools:
     - 'Modest Maps'
+    - 'HTML Canvas'
   version: 'v1.0.0-beta1'
   gist: 2689194
 ---

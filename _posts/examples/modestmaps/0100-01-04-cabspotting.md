@@ -1,6 +1,6 @@
 ---
   title: 'Cab spotting'
-  description: 'Tracking points on a map based on XML data'
+  description: 'Tracking points on a map based on XML data.'
   layout: 'mm-example'
   category: 'modest-maps'
   tags:

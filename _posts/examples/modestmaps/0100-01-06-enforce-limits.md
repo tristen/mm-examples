@@ -1,6 +1,6 @@
 ---
   title: 'Enforce Limits'
-  description: 'Set boundries to limit how far a map can be panned'
+  description: 'Set boundries to limit how far a map can be panned.'
   layout: 'mm-example'
   category: 'modest-maps'
   tags:

@@ -308,7 +308,7 @@ small.tags {
       -moz-border-radius: 8px;
       border-radius: 15px;
       display: block;
-      padding: 5px 10px;
+      padding: 4px 10px;
       font-weight: 600;
       -moz-transition: background-color 0.1s linear;
       -o-transition: background-color 0.1s linear;
@@ -463,11 +463,11 @@ pre {
 
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
-  margin: 0 0 0 33px; /* IE indents via margin-left */
+  margin: 0 0 0 40px;
   list-style: decimal;
   } 
   ol.linenums li {
-    padding-left: 12px;
+    padding: 0;
     color: #bebec5;
     line-height: 18px;
     }

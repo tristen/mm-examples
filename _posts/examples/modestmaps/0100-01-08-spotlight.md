@@ -1,13 +1,14 @@
 ---
-  title: 'Chaining'
-  description: 'Simplfy your code by method chaining.'
+  title: 'Spotlight'
+  description: 'Create highlighted regions using canvas.'
   layout: 'mm-example'
   category: 'modest-maps'
   tags:
     - 'Modest Maps'
-    - 'Architecture'
+    - 'Highlight'
+    - 'Canvas'
   tools:
     - 'Modest Maps'
   version: 'v1.0.0-beta1'
-  gist: 2627384
+  gist: 2689194
 ---

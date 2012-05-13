@@ -30,7 +30,7 @@ layout: 'default'
       </div>
 
       <!--Gist preview-->
-      <iframe class='preview' src='http://bl.ocks.org/d/{{page.hash}}/' frameborder='0'></iframe>
+      <iframe class='preview' src='http://bl.ocks.org/d/{{page.gist}}/' frameborder='0'></iframe>
       <div id='markdown'></div>
       <div id='html'></div>
       <div id='code-examples'></div>
@@ -87,9 +87,9 @@ layout: 'default'
 
 <script>
   $(function() {
-    var hash = {{page.hash}};
+    var gist = {{page.gist}};
     var e = new Docs();
-    $(e.getGist(hash));
+    $(e.getGist(gist));
     $(e.fixedSidebar());
   });
 </script>

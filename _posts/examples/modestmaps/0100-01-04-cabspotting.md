@@ -9,7 +9,6 @@
     - 'XML'
   tools:
     - 'Modest Maps'
-  version:
-    - 'v1.0.0-beta1'
-  hash: 2520208
+  version: 'v1.0.0-beta1'
+  gist: 2520208
 ---

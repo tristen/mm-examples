@@ -9,7 +9,6 @@
     - 'Limits'
   tools:
     - 'Modest Maps'
-  version:
-    - 'v1.0.0-beta1'
-  hash: 2627435
+  version: 'v1.0.0-beta1'
+  gist: 2627435
 ---

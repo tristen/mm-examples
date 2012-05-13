@@ -65,18 +65,18 @@ a.button {
     }
 
 a.button.color {
-  background: #69AACA;
+  background: #69AACA url(images/bg.png) repeat 0 0;
   border-color: #337A9D;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.20);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.35);
   -moz-box-shadow: none;
   box-shadow: none;
   color: #fff;
   }
   a.button.color:hover {
-    background: #509cc1;
+    background-color: #509cc1;
     }
   a.button.color:active {
-    background: #337A9D;
+    background-color: #337A9D;
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.35);
     -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.35);
     }
@@ -292,10 +292,11 @@ small.tags {
 
 #tag-list {
   display: block;
-  margin: 20px 10px 10px;
   height: 35px;
   height: auto!important;
   min-height: 35px;
+  width: 80%;
+  margin: 20px auto 10px;
   }
   #tag-list li {
     float: left;

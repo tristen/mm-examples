@@ -7,6 +7,7 @@
     - 'Modest Maps'
     - 'Zooming'
     - 'Panning'
+    - 'UI'
   tools:
     - 'Modest Maps'
   version: 'v1.0.0-beta1'

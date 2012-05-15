@@ -6,7 +6,7 @@
     queryExamples: function () {
       var search = $('#search');
       var tExamples = _.template($('#examples').html());
-      var tags = [];
+      var tags = [], data;
 
       var fullResult = $.ajax({
         url: 'search.json',

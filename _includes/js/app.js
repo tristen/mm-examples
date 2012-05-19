@@ -138,8 +138,6 @@
 
           // Animate scrolling down the document when toc links are clicked.
           $('#toc').find('a').on('click', that.animateScrolling);
-          // Set scrollspy on menu links
-          $(window).on('load resize', function () { $('body > #toc').scrollSpy(); });
       });
     },
 

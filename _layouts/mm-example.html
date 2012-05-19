@@ -2,12 +2,12 @@
 layout: 'default'
 ---
 
-<div class='limiter clearfix relative' data-spy='scroll'>
+<div class='limiter clearfix relative'>
   <div class='content'>
     <div class='content-main'>
       <div class='content-header clearfix'>
         <a href='{{site.baseurl}}/{{page.url}}' class='result'>
-          <h4 class='{{page.category}} title'>{{page.title}}</h4>
+          <h4 class='code title'>{{page.title}}</h4>
           <em class='description'>{{page.description}}</em>
           <small class='tags'>
             {% for tag in page.tags %}
@@ -44,7 +44,7 @@ layout: 'default'
           <div class='heading'>
             <h5 id='<%= id %>' class='filename'><%= filename %></h5>
           </div>
-          <pre class='prettyprint linenums'><%- content %></pre>
+          <pre class='prettyprint'><%- content %></pre>
         </div>
       </script>
       <script type='text/template' id='snippets'>
@@ -52,7 +52,7 @@ layout: 'default'
           <div class='heading'>
             <h5 id='<%= id %>' class='filename'><%= filename %></h5>
           </div>
-          <pre class='prettyprint linenums'><%- content %></pre>
+          <pre class='prettyprint'><%- content %></pre>
         </div>
       </script>
     </div>
@@ -70,7 +70,7 @@ layout: 'default'
         <script type='text/template' id='rest-listing'>
           <li><a href='#<%= id %>'><%= filename %></a></li>
         </script>
-        <div id='toc' data-scrollsply='scrollspy'>
+        <div id='toc'>
           <ul id='markdown-toc'></ul>
           <ul id='html-toc'></ul>
           <ul id='rest-toc'></ul>
@@ -78,7 +78,7 @@ layout: 'default'
       </div>
       <div class='use'>
         To use this example we encourage you to fork the code from <a href='https://gist.github.com'>gist.github.com</a> and customize it for your own needs.
-        <a target='_blank' class='button color' href='https://gist.github.com/gists/{{page.gist}}'>Fork this example</a>
+        <a target='_blank' class='button color' href='https://gist.github.com/gists/{{page.gist}}'>Fork this example<span class='icon octocat'>&nbsp;</span></a>
       </div>
       <a class='button' href='https://gist.github.com/gists/{{page.gist}}/download'>Download source code</a>
     </div>

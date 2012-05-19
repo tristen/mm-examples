@@ -4,7 +4,6 @@
   layout: 'mm-example'
   category: 'modest-maps'
   tags:
-    - 'Modest Maps'
     - 'Canvas'
   tools:
     - 'Modest Maps'

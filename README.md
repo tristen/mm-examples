@@ -1,6 +1,3 @@
-
-
-
 Outline how to contribute 
 
 - by forking exisiting Gists 

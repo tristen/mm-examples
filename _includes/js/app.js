@@ -10,7 +10,7 @@
 
       var fullResult = $.ajax({
         url: 'search.json',
-        dataType: 'json'
+        dataType: 'json',
         success: function(r) {
           data = _(r).chain()
             .compact()
